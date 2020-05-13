@@ -2,7 +2,7 @@
 namespace model ;
 use PDO;
 
-class DBConnection
+class DBConnect
 {
     public $dns ;
     public $user;

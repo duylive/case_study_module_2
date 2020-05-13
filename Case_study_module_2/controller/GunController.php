@@ -2,10 +2,13 @@
 
 namespace Controller;
 
+
 use function Couchbase\defaultDecoder;
+
 use model\Gun;
 use model\GunDB;
 use model\DBconnection;
+
 
 class GunController
 {
@@ -13,7 +16,7 @@ class GunController
 
     public function __construct()
     {
-        $connection = new DBconnection("mysql:host=localhost; dbname=manager_guns", "root", "");
+        $connection = new DBconnection("mysql:host=localhost;dbname=gun_manager", "admin", "123456");
         $this->gunDB = new GunDB($connection->connect());
     }
 
@@ -49,6 +52,7 @@ class GunController
         $id = $_GET['id'];
         $gun = $this->gunDB->get($id);
         include "view/view.php";
+
     }
 
     public function delete()

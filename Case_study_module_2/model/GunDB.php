@@ -1,6 +1,6 @@
 <?php
 
-namespace Model;
+namespace model;
 
 class GunDB
 {
@@ -30,7 +30,7 @@ class GunDB
 
     public function getAll()
     {
-        $sql = "SELECT * FROM gun";
+        $sql = "SELECT * FROM guns";
         $statement = $this->connection->prepare($sql);
         $statement->execute();
         $result = $statement->fetchAll();

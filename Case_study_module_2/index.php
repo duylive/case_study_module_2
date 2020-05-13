@@ -1,9 +1,11 @@
 <?php
 require "model/Gun.php";
-require "model/GunDB.php";
+require 'model/GunDB.php';
 require "model/DBconnection.php";
+require 'model/DBConnect.php';
+require 'model/DBLogin.php';
+require 'model/user_password.php';
 require "controller/GunController.php";
-
 use \Controller\GunController;
 
 ?>
