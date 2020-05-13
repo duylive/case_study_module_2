@@ -109,16 +109,15 @@
                     <a class="navbar-brand" href="#">WebSiteName</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
                     <li><a href="index.php">home</a></li>
-                    <li><a href="#">contact</a></li>
+                    <li><a href="index.php?page=add">add new</a></li>
                     <li><a href="#">about us</a></li>
                 </ul>
             </div>
         </nav>
     </div>
     <div class="right">
-        <a href="index.php?page=add"><button>add new </button></a>
+
     </div>
     <div class="left">
         <table class="simple_zebra">
