@@ -36,7 +36,8 @@ class GunDB
         $result = $statement->fetchAll();
         $guns = [];
         foreach ($result as $row) {
-            $gun = new Gun($row['name'], $row['series'], $row['branch'], $row['content'], $row['origin'], $row['price'], $row['status'], $row['type_id'], $row['size_bullet_id']);
+            $gun = new Gun($row['name'], $row['series'], $row['branch'], $row['content'], $row['origin'], $row['price'],
+                $row['status'], $row['type_id'], $row['size_bullet_id']);
             $gun->id = $row['id'];
             $guns[] = $gun;
         }
@@ -50,7 +51,8 @@ class GunDB
         $statement->bindParam(1, $id);
         $statement->execute();
         $row = $statement->fetch();
-        $gun = new Gun($row['name'], $row['series'], $row['branch'], $row['content'], $row['origin'], $row['price'], $row['status'], $row['type_id'], $row['size_bullet_id']);
+        $gun = new Gun($row['name'], $row['series'], $row['branch'], $row['content'], $row['origin'], $row['price'],
+            $row['status'], $row['type_id'], $row['size_bullet_id']);
         $gun->id = $row['id'];
         return $gun;
     }
@@ -78,5 +80,13 @@ class GunDB
         $statement->bindParam(9, $gun->size_bullet_id);
         $statement->bindParam(10, $id);
         $statement->execute();
+    }
+
+    public function search($key)
+    {
+        $sql = "SELECT * FROM `guns` WHERE name like '%$key%' or size_bullet_id like '%$key%' or price like '%$key%'";
+        $stmt = $this->connection->query($sql);
+        $result = $stmt->fetchAll();
+        return $result;
     }
 }

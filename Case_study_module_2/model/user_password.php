@@ -9,16 +9,17 @@ class user_password
     public $id;
     public $address;
     public $phone;
-    public $name ;
-    public $email ;
-    public $password ;
-    public function __construct($email,$password,$name,$address,$phone)
+    public $name;
+    public $email;
+    public $password;
+
+    public function __construct($email, $password, $name, $address, $phone)
     {
-        $this->name=$name;
-        $this->address=$address;
-        $this->phone=$phone;
-        $this->email=$email;
-        $this->password=$password;
+        $this->name = $name;
+        $this->address = $address;
+        $this->phone = $phone;
+        $this->email = $email;
+        $this->password = $password;
     }
 
     /**

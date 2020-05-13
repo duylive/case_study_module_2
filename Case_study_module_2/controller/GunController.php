@@ -21,7 +21,7 @@ class GunController
     }
 
     public function add()
-    {   var_dump($_REQUEST);
+    {
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             include "view/add.php";
         } else {
@@ -52,7 +52,7 @@ class GunController
     public function view()
     {
         $id = $_GET['id'];
-        $gun = $this->gunDB->get($id);
+        $guns = $this->gunDB->get($id);
         include "view/view.php";
 
     }
@@ -80,14 +80,19 @@ class GunController
             include "view/edit.php";
         } else {
             $id = $_GET['id'];
-            $gun = new Gun($_POST['name'], $_POST['series'], $_POST['branch'], $_POST['content'], $_POST['origin'], $_POST['price'], $_POST['status'], $_POST['type_id'], $_POST['size_bullet_id']);
+            $gun = new Gun($_POST['name'], $_POST['series'], $_POST['branch'], $_POST['content'], $_POST['origin'],
+                $_POST['price'], $_POST['status'], $_POST['type_id'], $_POST['size_bullet_id']);
             $this->gunDB->update($id, $gun);
             header('location: index.php?page=');
         }
     }
 
 
-
+    public function search()
+    {
+        var_dump($_REQUEST);
+        include 'view/search.php';
+    }
 
 
 }

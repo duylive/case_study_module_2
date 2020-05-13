@@ -5,7 +5,9 @@ namespace controller;
 use model\user_password;
 use model\DBConnect;
 use model\DBLogin;
+
 include 'model/DBConnect.php';
+
 class ControllerLogin
 {
     public $DBConnectionLogin;
@@ -19,11 +21,11 @@ class ControllerLogin
     public function login()
     {
 
-        if ($_SERVER['REQUEST_METHOD']=='POST') {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $result = $this->DBConnectionLogin->checkLogin($_POST['email']);
-            if ($result){
+            if ($result) {
                 header('location: index.php');
-            }else{
+            } else {
                 $message = "wrong password or account";
                 header('location: index_1.php');
             }
@@ -34,8 +36,9 @@ class ControllerLogin
 
     public function register()
     {
-        if ($_SERVER["REQUEST_METHOD"]=="POST"){
-            $user = new user_password($_POST['email'],$_POST['password'],$_POST['name'],$_POST['address'],$_POST['phone']);
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $user = new user_password($_POST['email'], $_POST['password'], $_POST['name'], $_POST['address'],
+                $_POST['phone']);
             $this->DBConnectionLogin->register($user);
             header('location: index_1.php');
 
@@ -44,13 +47,19 @@ class ControllerLogin
 
 
     }
-    public function getBackPassword(){
-        if ($_SERVER['REQUEST_METHOD']=='POST'){
+
+    public function getBackPassword()
+    {
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $email = $_POST['email'];
-            $phone=$_POST['phone'];
-            $result =$this->DBConnectionLogin->getpassword($email);
-            var_dump($result);
-            include 'view/forgotPassword.php';
+            $phone = $_POST['phone'];
+            $result = $this->DBConnectionLogin->getpassword($email, $phone);
+            if ($result) {
+                $message = 'you password is ' . $result['password'];
+            }
+
         }
+        include 'view/forgotPassword.php';
     }
 }
