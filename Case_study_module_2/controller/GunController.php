@@ -3,7 +3,7 @@
 namespace Controller;
 
 use function Couchbase\defaultDecoder;
-use model\Guns;
+use model\Gun;
 use model\GunDB;
 use model\DBconnection;
 

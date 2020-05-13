@@ -1,5 +1,5 @@
 <?php
-require "model/Guns.php";
+require "model/Gun.php";
 require "model/GunDB.php";
 require "model/DBconnection.php";
 require "controller/GunController.php";

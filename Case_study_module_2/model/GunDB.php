@@ -13,7 +13,7 @@ class GunDB
 
     public function create($gun)
     {
-        $sql = "INSERT INTO guns (name, series, branch, content, origin, price, status, type_id, size_bullet_id) 
+        $sql = "INSERT INTO gun (name, series, branch, content, origin, price, status, type_id, size_bullet_id) 
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,)";
         $statement = $this->connection->prepare($sql);
         $statement->bindParam(1, $gun->name);
@@ -30,7 +30,7 @@ class GunDB
 
     public function getAll()
     {
-        $sql = "SELECT * FROM guns";
+        $sql = "SELECT * FROM gun";
         $statement = $this->connection->prepare($sql);
         $statement->execute();
         $result = $statement->fetchAll();
@@ -45,7 +45,7 @@ class GunDB
 
     public function get($id)
     {
-        $sql = "SELECT * FROM guns WHERE id = ?";
+        $sql = "SELECT * FROM gun WHERE id = ?";
         $statement = $this->connection->prepare($sql);
         $statement->bindParam(1, $id);
         $statement->execute();
@@ -57,7 +57,7 @@ class GunDB
 
     public function delete($id)
     {
-        $sql = "DELETE FROM guns WHERE id =  ?";
+        $sql = "DELETE FROM gun WHERE id =  ?";
         $statement = $this->connection->prepare($sql);
         $statement->bindParam(1, $id);
         $statement->execute();
