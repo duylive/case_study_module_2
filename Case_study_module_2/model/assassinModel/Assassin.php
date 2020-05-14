@@ -8,11 +8,13 @@ class Assassin
     public $info ;
     public $image;
     public $id;
-    public function __construct($name,$image,$info)
+    public $price;
+    public function __construct($name,$image,$info,$price)
     {
         $this->name=$name;
         $this->image=$image;
         $this->info=$info;
+        $this->price=$price;
     }
 
     /**

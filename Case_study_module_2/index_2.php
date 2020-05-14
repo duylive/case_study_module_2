@@ -17,6 +17,9 @@
     $controller= new ControllerAssassin();
     switch ($page){
         case 'add':$controller->add();break;
+        case 'search':$controller->search();break;
+        case 'update':$controller->update();break;
+        case 'delete':$controller->delete();break;
         default:$controller->Viewlist();break;
     }
 ?>

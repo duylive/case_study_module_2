@@ -40,7 +40,7 @@
 <ul>
     <li><a href="index.php">home</a></li>
     <li><a href="index_2.php?page=add">add new assassin</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="index_2.php?page=search">search</a></li>
     <li><a href="#about">About</a></li>
 </ul>
 <h2>HTML Table</h2>
@@ -55,11 +55,16 @@
     </tr>
     <?php foreach ($result as $key => $person):?>
     <tr>
-        <td><?php $key?></td>
+        <td><?php echo $key?></td>
         <td><?php echo $person['name']?></td>
-        <td><?php echo $person['image']?></td>
+        <td><img src="<?php echo $person['image']?>" alt=""></td>
         <td><?php echo $person['text']?></td>
         <td><?php echo $person['price']?></td>
+        <td>
+            <a href="index_2.php?page=delete&id=<?php echo $person['id']?>">delete</a>
+            <a href="index_2.php?page=update&id=<?php echo $person['id']?>">update</a>
+
+        </td>
     </tr>
     <?php endforeach;?>
 </table>
