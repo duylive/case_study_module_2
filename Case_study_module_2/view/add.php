@@ -84,26 +84,43 @@
                                            placeholder="price " required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" name="status" id="email" class="form-control input-sm"
-                                           placeholder="status " required>
+                                    <select name="status" id="">
+                                        <option value="1">còn hàng</option>
+                                        <option value="2">hết hàng</option>
+                                    </select>
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-6 col-sm-6 col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" name="type_id" id="password"
-                                                   class="form-control input-sm" placeholder="type_id" required>
-                                        </div>
+                                        <select name="size_bullet" id="">
+                                            <option value="1">Đạn nhỏ</option>
+                                            <option value="2">Đạn lớn</option>
+                                            <option value="3">Anti-personnel - APERS</option>
+                                            <option value="4">
+                                                High Explosive Anti-Tank - HEAT
+                                            </option>
+                                            <option value="5">Armor Piercing Capped - APC</option>
+                                            <option value="6">Armor Piercing Capped, Ballistic Cap - APCBC</option>
+                                            <option value="7">
+                                                Armor Piercing Composite, Rigid - APCR
+                                            </option>
+                                            <option value="8">Kenetic Energy</option>
+
+                                        </select>
                                     </div>
                                     <div class="col-xs-6 col-sm-6 col-md-6">
                                         <div class="form-group">
-                                            <input type="text" name="size_bullet_id" id="password_confirmation"
-                                                   class="form-control input-sm" placeholder="size_bullet_id " required>
+                                            <select name="type" id="">
+                                                <option value="1">shotgun</option>
+                                                <option value="2">sniper</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
 
                                 <input type="submit" value="add new " class="btn btn-info btn-block">
-                                <a href="index.php"><button type="button" class="btn btn-dark">back</button></a>
+                                <a href="index.php">
+                                    <button type="button" class="btn btn-dark">back</button>
+                                </a>
 
                             </form>
                         </div>

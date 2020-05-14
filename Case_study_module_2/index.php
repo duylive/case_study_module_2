@@ -32,6 +32,9 @@ use \Controller\GunController;
         case 'add':
             $controller->add();
             break;
+        case 'search':
+            $controller->search();
+            break;
         case 'view':
             $controller->view();
             break;

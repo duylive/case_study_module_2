@@ -138,13 +138,13 @@
             <thead>
             <tr>
                 <th>id</th>
-                <th>image</th>
                 <th>name</th>
                 <th>series</th>
                 <th>branch</th>
                 <th>price</th>
                 <th>status</th>
                 <th>size_bullet_id</th>
+                <th rowspan="3">function</th>
             </tr>
             </thead>
             <tbody>
@@ -157,6 +157,9 @@
                     <td><?php echo $gun['price'] ?></td>
                     <td><?php echo $gun['status'] ?></td>
                     <td><?php echo $gun['size_bullet_id'] ?></td>
+                    <td><a href="./index.php?page=edit&id=<?php echo $gun['id'] ?>">update</a></td>
+                    <td><a href="./index.php?page=delete&id=<?php echo $gun['id'] ?>">delete</a></td>
+                    <td><a href="./index.php?page=view&id=<?php echo $gun['id'] ?>">detail</a></td>
                 </tr>
             <?php endforeach; ?>
             </tbody>
