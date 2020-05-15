@@ -1,4 +1,4 @@
-<h1>You sure</h1>
+<h1>You sure ???</h1>
 
 <h3><?php echo $gun->name ; ?></h3>
 
